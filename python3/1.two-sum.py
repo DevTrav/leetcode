@@ -6,7 +6,9 @@
 
 # @lc code=start
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+
+        #hashmap solution
         numMap = {}
         for i, num in enumerate(nums):
             complement = target - num
@@ -15,5 +17,5 @@ class Solution:
             numMap[num] = i
         return [] 
         
-# @lc code=end
+# # @lc code=end
 
