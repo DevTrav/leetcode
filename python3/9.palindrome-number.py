@@ -7,9 +7,22 @@
 # @lc code=start
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        x_str = str(x)
+    # Compare with reverse
+        if x < 0:
+            return False
+        
+        original, reversed = x, 0
+        while x != 0:
+            reversed = reversed * 10 + x % 10
+            x //= 10
+        
+        return original == reversed
 
-        return x_str == x_str[:: -1]
+    # Convert string and reverse
+    # def isPalindrome(self, x: int) -> bool:
+    #     x_str = str(x)
+
+    #     return x_str == x_str[:: -1]
         
 # @lc code=end
 
