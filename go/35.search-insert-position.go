@@ -7,21 +7,20 @@
 // @lc code=start
 func searchInsert(nums []int, target int) int {
 
-	beg := 0
-	end := len(nums) - 1
+	left, right := 0, len(nums)-1
 
-	for beg <= end {
-		mid := beg + (end-beg)/2
+	for left <= right {
+		mid := left + (right-left)/2
 
 		if nums[mid] == target {
 			return mid
-		} else if target < nums[mid] {
-
+		} else if nums[mid] < target {
+			left = mid + 1
 		} else {
-			beg = mid + 1
+			right = mid - 1
 		}
 	}
-	return nums[beg]
+	return left
 }
 
 // @lc code=end
