@@ -12,7 +12,7 @@ class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         n = len(nums)
         counter = Counter(nums)
-        buckets = [0] * (n + 1)  # [1,2,3] => [0,0,0]
+        buckets = [0] * (n + 1)  # [1,2,3] => [0,0,0, 0]
 
         for num, freq in counter.items():
             if buckets[freq] == 0:
